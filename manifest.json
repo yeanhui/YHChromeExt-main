@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Developer Power Mode Combo",
+  "version": "1.0.0",
+  "description": "Local-only typing streaks with neon sparks and combo celebrations.",
+  "minimum_chrome_version": "120",
+  "permissions": ["storage"],
+  "web_accessible_resources": [{
+    "resources": ["assets/audio/rooster.oga", "assets/audio/donkey.wav"],
+    "matches": ["http://*/*", "https://*/*"]
+  }],
+  "action": {
+    "default_title": "Power Mode",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [{
+    "matches": ["http://*/*", "https://*/*"],
+    "js": ["dist/content.js"],
+    "css": ["styles.css"],
+    "run_at": "document_idle"
+  }]
+}

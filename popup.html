@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Power Mode</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <span class="brand-mark" aria-hidden="true"><i data-lucide="zap"></i></span>
+    <div><h1>Power Mode</h1><span class="edition">COMBO EDITION</span></div>
+  </header>
+  <main>
+    <label class="control" for="enabled">
+      <span class="control-copy">Power Mode<span id="status" class="status" role="status">Loading</span></span>
+      <span class="toggle"><input id="enabled" type="checkbox" role="switch" disabled><span class="switch" aria-hidden="true"></span></span>
+    </label>
+    <div class="pet-setting">
+      <label for="pets"><i data-lucide="paw-print" aria-hidden="true"></i>Virtual pets</label>
+      <select id="pets" disabled><option value="all">All pets</option><option value="fish">Ocean fish</option><option value="rooster">Rooster</option><option value="donkey">Donkey</option><option value="off">Off</option></select>
+      <canvas id="pet-preview" width="624" height="112" aria-hidden="true"></canvas>
+    </div>
+    <label class="sound-control" for="sound"><span>Idle animal sounds</span><input id="sound" type="checkbox" disabled></label>
+    <div class="idle-control"><label for="idle-seconds">Idle time (seconds)</label><input id="idle-seconds" type="number" min="1" max="3600" step="1" value="5" disabled></div>
+    <p id="error" role="alert" hidden></p>
+  </main>
+  <footer><i data-lucide="shield-check" aria-hidden="true"></i><span>Local only</span><span class="version">v1.0</span></footer>
+  <script src="dist/popup.js"></script>
+</body>
+</html>

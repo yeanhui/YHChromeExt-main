@@ -1,0 +1,26 @@
+{
+  "name": "developer-power-mode-combo",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "esbuild src/content.js src/popup.js --bundle --outdir=dist --format=iife --target=chrome120",
+    "test": "node --test tests/streak.test.js",
+    "test:browser": "node --test tests/browser.test.js",
+    "prepackage": "npm run build",
+    "package": "node scripts/package.js",
+    "prepreview": "npm run build",
+    "preview": "node scripts/capture-preview.js"
+  },
+  "dependencies": {
+    "lucide": "^1.52.0",
+    "textarea-caret": "^3.1.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "esbuild": "^0.28.2",
+    "fflate": "^0.8.3",
+    "gifenc": "^1.0.3",
+    "pngjs": "^7.0.0"
+  }
+}

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Power Mode Test Workspace</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #f3f6f5; color: #172923; font: 16px/1.5 'Bahnschrift', sans-serif; }
+    main { max-width: 800px; margin: 60px auto; padding: 0 24px; }
+    h1 { font-size: 28px; }
+    label { display: block; margin: 20px 0 6px; }
+    input, textarea, [contenteditable] { width: 100%; border: 1px solid #a2b6ac; border-radius: 4px; padding: 12px; font: 16px/24px 'Consolas', monospace; color: #172923; background: #fff; }
+    textarea { height: 168px; resize: vertical; }
+    [contenteditable] { min-height: 96px; }
+    button { margin-top: 20px; padding: 8px 16px; }
+    @media (max-width: 500px) { main { margin-top: 190px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Writing Workspace</h1>
+    <label for="title">Title</label><input id="title" autocomplete="off">
+    <label for="notes">Notes</label><textarea id="notes" spellcheck="false"></textarea>
+    <label id="editor-label">Rich text</label><div id="editor" contenteditable="true" role="textbox" aria-labelledby="editor-label"></div>
+    <label for="password">Password</label><input id="password" type="password">
+    <label for="locked">Read-only</label><input id="locked" readonly value="Cannot edit">
+    <label for="email">Email (caret fallback)</label><input id="email" type="email">
+    <button id="button" type="button">Focus outside editor</button>
+  </main>
+</body>
+</html>
